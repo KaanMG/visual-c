@@ -10,7 +10,7 @@ main(){
     islem1 = a + b;
     islem2 = a - b;
     islem3 = a * b;
-    islem4 = a / b;
+    islem4 = (float)a / (float)b;
     islem5 = a % b;
     us = pow(a,b);
     karekok = sqrt(16);
