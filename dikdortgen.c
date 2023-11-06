@@ -10,9 +10,11 @@ main(){
     scanf("%d", &b);
     alan = a * b;
     cevre = 2*a + 2*b;
-    kosegen = pow(a,2) + pow(b,2) / (float)(1/2);
+    kosegen = sqrt(pow(a,2) + pow(b,2));
     printf("Dikdortgenin alani: %d\n", alan);
     printf("Dikdortgenin cevresi: %d\n", cevre);
     printf("Dikdortgenin kosegeni: %d", kosegen);
+
+    return 0;
 
 }
