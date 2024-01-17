@@ -60,7 +60,7 @@ int main()
 {
     int operation, choice;
 
-    printf("Which operation do you want to perform?(Enter only the operation number.)\n");
+    printf("Which operation do you want to perform?(Enter only the operation number.)\n\n");
     choice = operations();
 
     double perimeter, area;
@@ -89,7 +89,7 @@ int main()
     case 3:
     {
         int side;
-        printf("Enter of the side of the equiliteral triangle.");
+        printf("Enter of the side of the equiliteral triangle = ");
         scanf("%d", &side);
 
         area = triangleArea(side);
@@ -99,7 +99,7 @@ int main()
     case 4:
     {
         int side;
-        printf("Enter of the side of the equiliteral triangle");
+        printf("Enter of the side of the equiliteral triangle = ");
         scanf("%d", &side);
 
         perimeter = trianglePerimeter(side);
@@ -109,7 +109,7 @@ int main()
     case 5:
     {
         int side;
-        printf("Enter of the side of the square");
+        printf("Enter of the side of the square = ");
         scanf("%d", &side);
 
         area = squareArea(side);
@@ -119,7 +119,7 @@ int main()
     default:
     {
         int side;
-        printf("Enter of the side of the square");
+        printf("Enter of the side of the square = ");
         scanf("%d", &side);
 
         perimeter = squarePerimeter(side);
