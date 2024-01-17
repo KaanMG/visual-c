@@ -14,25 +14,24 @@ Fonksiyonlar 4'e ayrılır
 #include <stdio.h>
 
 void message();
-void topla(int sayi1,int sayi2)
+void topla(int sayi1, int sayi2)
 {
-    printf("%d + %d = %d\n",sayi1,sayi2,sayi1+sayi2);
+    printf("%d + %d = %d\n", sayi1, sayi2, sayi1 + sayi2);
 }
 void carpma(int sayi1, int sayi2)
 {
-    printf("%d x %d = %d\n",sayi1,sayi2,sayi1*sayi2);
+    printf("%d x %d = %d\n", sayi1, sayi2, sayi1 * sayi2);
 }
-
 
 main()
 {
-    int a=5,b=23,c=243,d=34;
+    int a = 5, b = 23, c = 243, d = 34;
     message();
-    topla(a,b);
-    topla(b,c);
-    topla(c,d);
-    carpma(a,d);
-    carpma(b,d);
+    topla(a, b);
+    topla(b, c);
+    topla(c, d);
+    carpma(a, d);
+    carpma(b, d);
 }
 void message()
 {
