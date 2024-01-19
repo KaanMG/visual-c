@@ -15,7 +15,7 @@ int main()
 {
     int n, k;
     double process = 0;
-    printf("Enter of the value n = ");
+    printf("Enter the value of n = ");
     scanf("%d", &n);
 
     for (k = 1; k <= n; k++)
