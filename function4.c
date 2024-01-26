@@ -4,7 +4,7 @@
 double alan(int sayi1)
 {
     double daireAlani;
-
+    
     daireAlani = PI * sayi1 * sayi1;
 
     return daireAlani;

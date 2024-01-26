@@ -18,9 +18,10 @@ void topla(int sayi1, int sayi2)
 {
     printf("%d + %d = %d\n", sayi1, sayi2, sayi1 + sayi2);
 }
-void carpma(int sayi1, int sayi2)
+int carpma(int sayi1, int sayi2)
 {
     printf("%d x %d = %d\n", sayi1, sayi2, sayi1 * sayi2);
+    return sayi1*sayi2;
 }
 
 main()
@@ -32,6 +33,7 @@ main()
     topla(c, d);
     carpma(a, d);
     carpma(b, d);
+    printf("%d",carpma(a,b));
 }
 void message()
 {
