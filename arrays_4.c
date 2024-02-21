@@ -25,4 +25,6 @@ int main()
     {
         printf("%d\t",array[k]);
     }
+
+    return 0;
 }

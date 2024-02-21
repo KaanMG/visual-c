@@ -39,4 +39,6 @@ int main()
     {
         printf("%d\t", iArray[i]);
     }
+
+    return 0;
 }

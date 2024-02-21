@@ -13,4 +13,6 @@ int main()
     {
         printf("%d=> %d\t\t", (i+1), number2[i]);
     }
+
+    return 0;
 }
