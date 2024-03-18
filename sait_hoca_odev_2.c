@@ -34,7 +34,7 @@ float chooseOperations(int number, float number1)
         }
         else
         {
-            return (float)abs(number1);
+            return (float)fabs(number1);
         }
     }
     else if (number == 4)
