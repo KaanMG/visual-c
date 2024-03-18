@@ -19,7 +19,7 @@ int main()
     while(1)
     {
         printf("Enter the letter you want to search for = ");
-        scanf("%c",&letter);
+        scanf(" %c",&letter);
 
         char *pr = search(text, letter);
 
@@ -30,7 +30,7 @@ int main()
             printf("Your character is not found in the text");
         }
         printf("\nDo you want to continue?(Y/N) = ");
-        scanf("%c",answer);
+        scanf(" %c", &answer);
         if(answer == 'N'){
             break;
         }
