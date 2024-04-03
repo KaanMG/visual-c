@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum(int *numbers,int size)
+int sum(int numbers[],int size)
 {
     int addition = 0;
     for(int i = 0; i < size; i++)
