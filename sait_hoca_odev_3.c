@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
-int addition(int randomNumbers[][], int rows, int columns)
+int addition(int (*randomNumberArray)[6], int rows, int columns)
 {
     int total = 0;
 
@@ -10,14 +10,14 @@ int addition(int randomNumbers[][], int rows, int columns)
     {
         for (int y = (columns - 1); y <= (columns + 1); y++)
         {
-            total += *randomNumbers[x][y];
+            total += randomNumberArray[x][y];
         }
     }
 
     return total;
 }
 
-void sorting(int sum[], char nameList[])
+void sorting(int *sum, char (*nameList)[50])
 {
     int intTemp;
     char *charTemp;
@@ -26,29 +26,29 @@ void sorting(int sum[], char nameList[])
     {
         for (int e = 0; e < 2; e++)
         {
-            if (*sum[e] < *sum[e + 1])
+            if (sum[e] < sum[e + 1])
             {
-                intTemp = *sum[e];
-                *sum[e] = *sum[e + 1];
-                *sum[e + 1] = intTemp;
+                intTemp = sum[e];
+                sum[e] = sum[e + 1];
+                sum[e + 1] = intTemp;
 
-                charTemp = *nameList[e];
-                *nameList[e] = *nameList[e + 1];
-                *nameList[e + 1] = charTemp;
+                charTemp = nameList[e];
+                nameList[e] = nameList[e + 1];
+                nameList[e + 1] = charTemp;
             }
         }
     }
 
     for(int h = 0; h < 3; h++)
     {
-        printf("%s = %d\n", *nameList[h], *sum[h]);
+        printf("%s = %d\n", nameList[h], sum[h]);
     }
 }
 
 int main()
 {
-    int randomNumbers[8][6], row, column, sum[3];
-    char *nameList[3];
+    int randomNumberArray[8][6], row, column, sum[3];
+    char nameList[3][50];
 
     srand(time(NULL));
 
@@ -56,7 +56,7 @@ int main()
     {
         for (int j = 0; j < 6; j++)
         {
-            randomNumbers[i][j] = rand() % 201 - 100;
+            randomNumberArray[i][j] = rand() % 201 - 100;
         }
     }
 
@@ -64,7 +64,7 @@ int main()
     {
         for (int l = 0; l < 6; l++)
         {
-            printf("%d\t", randomNumbers[k][l]);
+            printf("%d\t", randomNumberArray[k][l]);
         }
         printf("\n");
     }
@@ -80,7 +80,7 @@ int main()
         printf("Select a column = ");
         scanf("%d", &column);
 
-        sum[a] = addition(randomNumbers, row, column);
+        sum[a] = addition(randomNumberArray, row, column);
 
         sorting(sum, nameList);
     }
