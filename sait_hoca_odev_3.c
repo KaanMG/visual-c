@@ -72,4 +72,7 @@ int main()
        
     }
     sorting(sum, nameList);
+
+
+    return 0;
 }
