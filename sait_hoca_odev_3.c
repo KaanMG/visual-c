@@ -13,36 +13,24 @@ int addition(int (*randomNumberArray)[6], int rows, int columns)
             total += randomNumberArray[x][y];
         }
     }
+    total -= randomNumberArray[rows][columns];
 
     return total;
 }
 
 void sorting(int *sum, char (*nameList)[50])
 {
-    int intTemp;
-    char *charTemp;
+    int bigNumberIndex = 0;
 
-    for (int d = 0; d < 3; d++)
+    for(int d = 0; d < 2; d++)
     {
-        for (int e = 0; e < 2; e++)
-        {
-            if (sum[e] < sum[e + 1])
-            {
-                intTemp = sum[e];
-                sum[e] = sum[e + 1];
-                sum[e + 1] = intTemp;
-
-                charTemp = nameList[e];
-                nameList[e] = nameList[e + 1];
-                nameList[e + 1] = charTemp;
-            }
+        printf("%s : %d", nameList[d], sum[d]);
+        if(sum[d + 1] > sum[d]){
+            bigNumberIndex = d + 1;
         }
     }
-
-    for(int h = 0; h < 3; h++)
-    {
-        printf("%s = %d\n", nameList[h], sum[h]);
-    }
+    printf("%s : %d", nameList[2], sum[2]);
+    printf("%s : %d", nameList[bigNumberIndex], sum[bigNumberIndex]);
 }
 
 int main()
@@ -81,7 +69,7 @@ int main()
         scanf("%d", &column);
 
         sum[a] = addition(randomNumberArray, row, column);
-
-        sorting(sum, nameList);
+       
     }
+    sorting(sum, nameList);
 }

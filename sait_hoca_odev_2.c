@@ -22,7 +22,7 @@ float chooseOperations(int number, float number1)
     }
     else if (number == 2)
     {
-        printf("Which power of the number");
+        printf("Which power of the number = ");
         scanf("%d", &power);
         return pow(number1, power);
     }
@@ -89,62 +89,40 @@ float chooseOperations(int number, float number1)
 
 int main()
 {
-    int randomNumber, guessNumber = 0, choose, answer;
-    float guess, value = 0;
+    float randomNumber, result;
+    int select, iAnswer;
+    char cAnswer;
 
-    srand(time(NULL));
-    randomNumber = rand() % 100 + 1;
-    printf("%d\n", randomNumber);
-
-    while (1)
+    while(1)
     {
-        guessNumber++;
+        srand(time(NULL));
+        randomNumber = rand() % 201 - 100.651627;
+        printf("Your random number = %f\n", randomNumber);
 
-        printf("Take a guess = ");
-        scanf("%f", &guess);
-        guess = round(guess);
-
-        if (guess == randomNumber)
+        while(1)
         {
-            if (guessNumber % 2 == 0)
-            {
-                guess *= 1.724895;
-                printf("\nYour new guess = %f\n", guess);
-            }
-            else
-            {
-                guess *= -1.724895;
-                printf("\nYour new guess = %f\n", guess);
-            }
-            while (1)
-            {
-                operationTable();
-                scanf("%d", &choose);
-                value = chooseOperations(choose, guess);
-                printf("%f", value);
+            operationTable();
 
-                printf("\nDo you want to continue the process?(1/0)\n");
-                scanf("%d", &answer);
+            scanf("%d", &select);
 
-                if (answer == 0)
-                {
+            result = chooseOperations(select, randomNumber);
+
+            printf("Result = %f\n",result);
+        
+            printf("Do you want to perform the operation again? (Y/N)\n");
+            scanf("%c",&cAnswer);
+
+            if(cAnswer == 'Y'){
+                printf("Press 1 to continue with new number or press 2 to continue with the current number\n");
+                scanf("%d",iAnswer);
+
+                if(iAnswer == 1){
                     break;
                 }
             }
-            if (answer == 0)
-            {
-                break;
-            }
         }
-        else if (guess < randomNumber)
-        {
-            printf("Your guess is wrong, make a higher guess\n");
-        }
-        else
-        {
-            printf("Your guess is wrong, make a lower guess\n");
+        if(cAnswer == 'N'){
+            break;
         }
     }
-
-    return 0;
 }
