@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <math.h>
 
@@ -47,7 +48,7 @@ int main()
     ****t = 12;
     printf("%d",*****k);
     
-    */
+    
 
 int i = 5, j = 6, temp;
 
@@ -58,7 +59,32 @@ temp = *p;
 *q = temp;
 
 printf("%d, %d",i,j);
+*/
 
+#include <stdio.h>
 
-
+// 2 boyutlu matrisi yazdıran fonksiyon
+void printMatrix(int matrix[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
 }
+
+int main() {
+    int matris[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    // Matris fonksiyona gönderiliyor
+    printMatrix(matris);
+
+    return 0;
+}
+
+
+
