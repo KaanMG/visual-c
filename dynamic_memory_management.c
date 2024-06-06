@@ -11,9 +11,9 @@
 int main()
 {
     int *p;
-    // p = malloc(10 * sizeof(int));
+    // p = (int *)malloc(10 * sizeof(int));
 
-    p = calloc(10, sizeof(int));
+    p = (int *)calloc(10, sizeof(int));
 
     for (int j = 0; j < 10; j++)
     {
@@ -27,7 +27,7 @@ int main()
     }
     */
 
-    p = realloc(p, 10 * sizeof(int));
+    p = (int *)realloc(p, 20 * sizeof(int));
     
     for (int j = 10; j < 20; j++)
     {
